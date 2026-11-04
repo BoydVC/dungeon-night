@@ -107,7 +107,7 @@
       pathLabel: "Moss",
       narrate: () => pick(DM.mossPath),
       choices: [
-        { label: "Study the riddle stone", hint: "A puzzle for Char & Vic", next: "riddle" },
+        { label: "Study the riddle stone", hint: "A puzzle for Alex & Sam", next: "riddle" },
       ],
     },
     goblins: {
@@ -572,7 +572,7 @@
     return `<div class="screen title-screen" id="screen-title">
       <div class="crest">⚔️📜🐉</div>
       <h1 class="game-title">Dungeon Master Night</h1>
-      <p class="tagline">A family adventure for Boyd, Miranda, Char &amp; Vic</p>
+      <p class="tagline">A family adventure for Boyd, Jordan, Alex &amp; Sam</p>
       <div class="party-preview">
         ${HEROES.map((h) => `<div class="hero-card"><div class="emoji">${h.emoji}</div><div class="name">${esc(h.name)}</div><div class="role">${esc(h.role)}</div></div>`).join("")}
       </div>
@@ -581,7 +581,7 @@
         <button class="btn" id="btn-start">Begin the Quest</button>
         <button class="btn secondary" id="btn-recaps">Story Recaps</button>
       </div>
-      <p class="family-note">Fully offline · dice, combat &amp; choices · Char practices the story ending<br/>
+      <p class="family-note">Fully offline · dice, combat &amp; choices · Alex practices the story ending<br/>
       <strong>No accounts. No network. Just torchlight &amp; imagination.</strong></p>
     </div>`;
   }
@@ -680,7 +680,7 @@
     return `<div class="screen victory-screen" id="screen-victory">
       <div class="trophy">🏆✨</div>
       <h1>Quest Complete!</h1>
-      <p class="tagline">The Crystal of Story shines. Now Char (and Vic) write the legend.</p>
+      <p class="tagline">The Crystal of Story shines. Now Alex (and Sam) write the legend.</p>
       <div class="dm-box" style="text-align:left;max-width:640px;margin:12px auto">
         <div class="dm-label">Dungeon Master</div>
         <div class="dm-text">${esc(state.lastNarration || pick(DM.bossWin))}</div>
@@ -699,7 +699,7 @@
           </ul>
         </div>
         <label for="recap-author">Author name</label>
-        <input id="recap-author" type="text" placeholder="Char, Vic, or the whole party…" />
+        <input id="recap-author" type="text" placeholder="Alex, Sam, or the whole party…" />
         <label for="recap-title">Story title</label>
         <input id="recap-title" type="text" placeholder="e.g. The Night We Beat the Shadow Drake" />
         <label for="recap-body">Your story</label>
@@ -830,7 +830,7 @@
       const author = ($("#recap-author") && $("#recap-author").value) || "Hero";
       const title = ($("#recap-title") && $("#recap-title").value) || "Our Emberdeep Adventure";
       const body = ($("#recap-body") && $("#recap-body").value) || "";
-      if (!body.trim()) { toast("Write a few sentences first — Char's practice time!"); return; }
+      if (!body.trim()) { toast("Write a few sentences first — Alex's practice time!"); return; }
       const recap = {
         author, title, body,
         date: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
@@ -955,7 +955,7 @@
 
   function saveRecapTest(opts) {
     const recap = {
-      author: (opts && opts.author) || "Char",
+      author: (opts && opts.author) || "Alex",
       title: (opts && opts.title) || "Test Recap",
       body: (opts && opts.body) || "We beat the Drake and found the Crystal!",
       date: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),

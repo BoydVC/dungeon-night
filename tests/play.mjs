@@ -92,7 +92,7 @@ async function main() {
 
     // Recap save
     const recap = await c.ev(`JSON.stringify(window.__DM__.saveRecap({
-      author: "Char",
+      author: "Alex",
       title: "The Night We Beat the Drake",
       body: "Sir Bold shielded us. Willow shot true. Pip sparkled. We won the Crystal!"
     }))`).then(JSON.parse);
