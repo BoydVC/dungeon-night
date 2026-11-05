@@ -1,6 +1,6 @@
 # Dungeon Master Night
 
-Offline family-friendly D&D-style dungeon crawl for **Boyd, Miranda, Char (13) and Vic (11)**. A pre-written “AI Dungeon Master” narrates a three-hero party — **Sir Bold** the Knight, **Willow** the Ranger, and **Pip** the Wizard — through Emberdeep Keep: branching paths, animated d20 rolls, turn-based combat, loot, a Shadow Drake boss, and a kid-written story recap (writing practice for Char) saved to `localStorage` with a printable page.
+Offline family-friendly D&D-style dungeon crawl for **Boyd, Jordan, Alex (13) and Sam (11)**. A pre-written “AI Dungeon Master” narrates a three-hero party — **Sir Bold** the Knight, **Willow** the Ranger, and **Pip** the Wizard — through Emberdeep Keep: branching paths, animated d20 rolls, turn-based combat, loot, a Shadow Drake boss, and a kid-written story recap (writing practice for Alex) saved to `localStorage` with a printable page.
 
 Progress and recaps stay on this device. No accounts, no network, no CDN fonts or scripts, no live LLM — all DM lines are authored in-game.
 
