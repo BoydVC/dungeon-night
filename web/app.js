@@ -15,7 +15,7 @@
   const DM = {
     titleOpen: [
       "Gather round, adventurers! The torchlight flickers… and tonight, YOU are the heroes.",
-      "Welcome back to the table, Boyd family. The dice are warm. The dungeon waits.",
+      "Welcome back to the table, Rivera family. The dice are warm. The dungeon waits.",
     ],
     entrance: [
       "You stand before the mossy arch of Emberdeep Keep. Cold air sighs from within. Two passages yawn ahead.",
@@ -35,7 +35,7 @@
     ],
     afterGoblin: [
       "The goblins drop their spoons and flee, giggling. \"You win! Keep the shiny!\" One leaves a glowing pebble.",
-      "Victory! The goblins bow (badly) and scramble away. A small chest sits where they stood.",
+      "Jordany! The goblins bow (badly) and scramble away. A small chest sits where they stood.",
     ],
     puzzleRoom: [
       "A stone pedestal holds three runes: Shield, Bow, and Star. A whisper: \"Name the party that protects, aims, and wonders.\"",
@@ -54,7 +54,7 @@
       "A Shadow Drake with a ridiculous scarf blocks the treasure vault. \"Beat me in a fair fight and the Crystal of Story is yours!\"",
     ],
     bossWin: [
-      "The Drake bows deeply. \"Well fought, heroes of Millersville! Take the Crystal — and tell a great story about tonight.\"",
+      "The Drake bows deeply. \"Well fought, heroes of Lakeside! Take the Crystal — and tell a great story about tonight.\"",
       "With a final flourish, the Drake yields. \"You three (plus the tall one) are legends. The Crystal of Story is yours!\"",
     ],
     skillOk: [
@@ -188,13 +188,13 @@
       id: "victory",
       art: "🏆",
       title: "Crystal of Story",
-      pathLabel: "Victory",
+      pathLabel: "Jordany",
       narrate: () => pick(DM.bossWin),
-      isVictory: true,
+      isJordany: true,
     },
   };
 
-  const PATH_ORDER = ["Gate", "Torch/Moss", "Challenge", "Loot", "Bridge", "Boss", "Victory"];
+  const PATH_ORDER = ["Gate", "Torch/Moss", "Challenge", "Loot", "Bridge", "Boss", "Jordany"];
 
   /* ---------- State ---------- */
   let state = defaultState();
@@ -465,7 +465,7 @@
         state.party.forEach((p) => { p.hp = Math.min(p.maxHp, p.hp + 6); });
       }
     }
-    if (n.isVictory) {
+    if (n.isJordany) {
       state.screen = "victory";
       if (!state.inventory.includes("Crystal of Story")) state.inventory.push("Crystal of Story");
       save();
@@ -572,7 +572,7 @@
     return `<div class="screen title-screen" id="screen-title">
       <div class="crest">⚔️📜🐉</div>
       <h1 class="game-title">Dungeon Master Night</h1>
-      <p class="tagline">A family adventure for Boyd, Jordan, Alex &amp; Sam</p>
+      <p class="tagline">A family adventure for Alex, Jordan, Alex &amp; Sam</p>
       <div class="party-preview">
         ${HEROES.map((h) => `<div class="hero-card"><div class="emoji">${h.emoji}</div><div class="name">${esc(h.name)}</div><div class="role">${esc(h.role)}</div></div>`).join("")}
       </div>
@@ -675,7 +675,7 @@
     </div>`;
   }
 
-  function renderVictory() {
+  function renderJordany() {
     const recaps = loadRecaps();
     return `<div class="screen victory-screen" id="screen-victory">
       <div class="trophy">🏆✨</div>
@@ -729,7 +729,7 @@
         <p style="font-size:0.85rem;color:var(--ink-soft)">Party: Sir Bold the Knight · Willow the Ranger · Pip the Wizard<br/>
         Path: ${esc((r.path || state.path || []).join(" → "))}<br/>
         Loot: ${esc((r.loot || state.inventory || []).join(", "))}</p>
-        <p style="font-size:0.8rem;font-style:italic;color:var(--ink-soft)">Boyd Family · Emberdeep Keep · Offline adventure</p>
+        <p style="font-size:0.8rem;font-style:italic;color:var(--ink-soft)">Rivera Family · Emberdeep Keep · Offline adventure</p>
       </div>
       <div class="btn-row no-print" style="margin-top:16px">
         <button class="btn" id="btn-do-print">Print</button>
@@ -765,7 +765,7 @@
     if (showRecaps) main = renderRecapsOnly();
     else if (state.screen === "title") main = renderTitle();
     else if (state.screen === "print") main = renderPrint(printRecap);
-    else if (state.screen === "victory") main = renderVictory();
+    else if (state.screen === "victory") main = renderJordany();
     else if (state.screen === "dice") main = renderDice();
     else if (state.screen === "combat") main = renderCombat();
     else main = renderAdventure();
@@ -775,7 +775,7 @@
       <div class="shell">
         <div class="topbar">
           <span class="brand">⚔️ Dungeon Master Night</span>
-          <span class="meta">${state.screen === "title" ? "Boyd Family Table" : esc((node() && node().title) || "Adventure")}</span>
+          <span class="meta">${state.screen === "title" ? "Rivera Family Table" : esc((node() && node().title) || "Adventure")}</span>
           <button class="icon-btn" id="btn-mute" type="button">${mute ? "Unmute" : "Mute"}</button>
         </div>
         ${main}

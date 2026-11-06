@@ -1,6 +1,6 @@
 # Dungeon Master Night
 
-Offline family-friendly D&D-style dungeon crawl for **Boyd, Jordan, Alex (13) and Sam (11)**. A pre-written “AI Dungeon Master” narrates a three-hero party — **Sir Bold** the Knight, **Willow** the Ranger, and **Pip** the Wizard — through Emberdeep Keep: branching paths, animated d20 rolls, turn-based combat, loot, a Shadow Drake boss, and a kid-written story recap (writing practice for Alex) saved to `localStorage` with a printable page.
+Offline family-friendly D&D-style dungeon crawl for **Alex, Jordan, Alex (13) and Sam (11)**. A pre-written “AI Dungeon Master” narrates a three-hero party — **Sir Bold** the Knight, **Willow** the Ranger, and **Pip** the Wizard — through Emberdeep Keep: branching paths, animated d20 rolls, turn-based combat, loot, a Shadow Drake boss, and a kid-written story recap (writing practice for Alex) saved to `localStorage` with a printable page.
 
 Progress and recaps stay on this device. No accounts, no network, no CDN fonts or scripts, no live LLM — all DM lines are authored in-game.
 
@@ -48,7 +48,7 @@ Health check: `http://127.0.0.1:4354/healthz`
 
 ## Theme
 
-Parchment panels, torchlight gradients, gold frames, party HP rail — cozy tabletop night for the Boyd living room.
+Parchment panels, torchlight gradients, gold frames, party HP rail — cozy tabletop night for the Alex living room.
 
 ## Test results (2026-10-15)
 
@@ -57,6 +57,6 @@ Parchment panels, torchlight gradients, gold frames, party HP rail — cozy tabl
 
 ---
 ## Repo notes
-- **Built:** 2026-10-15, by TokenMax (Boyd's Grok Bot) on the Grok Bot box.
+- **Built:** 2026-10-15, by TokenMax (Alex's Grok Bot) on the Grok Bot box.
 - **Run:** `./run.sh` (then open the localhost URL it prints).
 - Imported from `/workspace/tokenmax/dungeon-night` on Oct 23, 2026. node_modules, virtualenvs, logs and files over 20 MB were left out.
